@@ -1,6 +1,71 @@
-Python source code files are stored here.
-main.py
-routing.py
-clustering.py
-energy_model.py
-drl_agent.py
+#  code for residual energy
+
+import matplotlib.pyplot as plt
+
+rounds = [0,200,400,600,800,1000,1200,1400,1600,1800]
+energy = [100,95,90,85,79,72,65,58,50,42]
+
+plt.plot(rounds, energy, marker='o')
+plt.title("Residual Energy")
+plt.xlabel("Rounds")
+plt.ylabel("Residual Energy (%)")
+plt.grid(True)
+plt.show()
+
+# code for packet delivery ratio
+
+import matplotlib.pyplot as plt
+
+protocols = ["ML-CHSM","FDRP","DQN","GSA","GSA-CEAR"]
+pdr = [44,59,74,83,98]
+
+plt.bar(protocols, pdr)
+plt.title("Packet Delivery Ratio")
+plt.ylabel("PDR (%)")
+plt.show()
+
+# code for the dead node evalution vs simulation rounds
+
+import matplotlib.pyplot as plt
+
+rounds = [0,200,400,600,800,1000,1200,1400,1600,1800]
+dead_nodes = [0,0,0,1,3,6,12,20,30,45]
+
+plt.plot(rounds, dead_nodes, marker='o')
+plt.title("Number of Dead Nodes vs Simulation Rounds")
+plt.xlabel(" Simulation Rounds")
+plt.ylabel("Number of Dead Nodes")
+plt.grid(True)
+plt.show()
+
+# code for transmission energy consuption per round
+import matplotlib.pyplot as plt
+
+# Rounds
+rounds = [0, 200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000]
+
+# Transmission Energy Consumption (Sample Values)
+energy_consumption = [2, 5, 9, 14, 20, 27, 35, 44, 54, 65, 77]
+
+plt.figure(figsize=(8,5))
+plt.plot( rounds, energy_consumption, marker='o', linewidth=2)
+
+plt.title("Transmission Energy Consumption per Round")
+plt.xlabel("Simulation Rounds")
+plt.ylabel("Transmission Energy (Joules)")
+plt.grid(True)
+
+plt.show()
+
+# code for network throughtput comparison
+
+import matplotlib.pyplot as plt
+
+protocols = ["ML-CHSM","FDRP","DQN","GSA","GSA-CEAR"]
+throughput = [79,95,119,130,158]
+
+plt.bar(protocols, throughput)
+plt.title("Network Throughput Comparison")
+plt.ylabel("Effective Throughput (Packets/Round)")
+plt.xlabel("Routing Protocols")
+plt.show()
